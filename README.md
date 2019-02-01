@@ -3,7 +3,14 @@
 ![](images/MonitLogo.png)
 
 ## Monit
-[Monit](https://mmonit.com/monit/) is a small Open Source utility for managing and monitoring Unix systems. [Monit](https://mmonit.com/monit/) conducts automatic maintenance and repair and can execute meaningful causal actions in error situations. E.g. [Monit](https://mmonit.com/monit/) can start a process if it does not run, restart a process if it does not respond and stop a process if it uses too much resources. You can use [Monit](https://mmonit.com/monit/) to monitor files, directories and filesystems for changes, such as timestamps changes, checksum changes or size changes.
+[Monit](https://mmonit.com/monit/) is a small Open Source utility for managing and monitoring Unix systems. [Monit](https://mmonit.com/monit/) conducts automatic maintenance and repair and can execute meaningful causal actions in error situations.
+
+ [Monit](https://mmonit.com/monit/) can:
+ * Start a process if it does not run
+ * Restart a process if it does not respond
+ * Stop a process if it uses too much resources.
+ 
+  You can use [Monit](https://mmonit.com/monit/) to monitor files, directories and filesystems for changes, such as timestamps changes, checksum changes or size changes.
 
 ### Installation
 
@@ -58,12 +65,12 @@ monit relaod
 
 You will then be able to access the monit web interface by going to “example.com:2812”
 
-Login with your user credentionals:
+Login with your user credentials:
 
 ![](images/monit_http.png)
 
 ### Monit Check Process Script Example
-This is an example of scrip for monitoring [sidekiq](https://github.com/mperham/sidekiq) with Monit
+This is an example of a script for [sidekiq](https://github.com/mperham/sidekiq) monitoring with Monit
 
 ```
 check process sidekiq_staging with pidfile /tmp/pids/sidekiq.pid
@@ -108,7 +115,7 @@ Before running the script we should add some permissions
 $ sudo chmod u+x /usr/local/bin/slack-webhook.sh
 ```
 
-Next step is configure over process monitoring to use slack
+Next step is to configure our process monitoring to use slack
 
 ```
 check process sidekiq_staging with pidfile /tmp/pids/sidekiq.pid
